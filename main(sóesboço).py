@@ -1,3 +1,13 @@
+
+
+
+
+
+
+
+
+
+
 def menu () :
     while True:
         print ("1 - Cadastro cliente")
