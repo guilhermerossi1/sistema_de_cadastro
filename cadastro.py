@@ -1,4 +1,17 @@
-def cadastro_cliente (banco_dados):
+def atualizar_cliente (banco_dados):
+
+    if len (banco_dados) == 0:
+        print ("Nenhum cliente cadastrado")
+        return None
+
+    id_cliente = int(input ("Digite o ID do cliente "))
+
+    cliente_atualizado = None
+    for cliente in banco_dados:
+            if cliente ["id"] == id_cliente:
+                cliente_atualizado = cliente
+                break
+
     nome = input ("Nome: ").strip()               ## --------- STRIP() remove espaços do fim e inicio da string
     idade = input ("Idade: ").strip() 
     telefone = input ("Telefone: ").strip() 
@@ -7,15 +20,14 @@ def cadastro_cliente (banco_dados):
 
     if nome == "" or idade == "" or  telefone == "" or email == "" :
         print ("ERRO: Todos os campos são obrigatórios.")
-        return
+        return None
 
-    cliente = {                                        ## ------------- isso é um dicionário! ---- é uma estrutura de dados que armazena informações em pares de é uma estrutura de dados que armazena informações em pares de é uma estrutura de dados que armazena informações em pares de é uma estrutura de dados que armazena informações em pares de chave e valor  
-        "nome": nome,
-        "idade": idade,
-        "telefone": telefone,
-        "email": email
-    }
-    banco_dados.append(cliente)
+    cliente_atualizado ["nome"] = nome
+    cliente_atualizado ["idade"] = idade
+    cliente_atualizado ["telefone"] = telefone
+    cliente_atualizado ["email"] = email
 
+    print ("Cliente atualizado com sucesso!")
 
-    ## input ------- serve para captar futuramente os dados que o USUARIO vai inserir no site/aplicativo sei la
+        ## PEDIR AJUDA PRO GABRIEL "O DIVO" PQ EU TO ENTENDENDO NADA E SEM CABEÇA PRA ISSO 
+        ## ou pedir ajuda pro GEMINI me explicar
