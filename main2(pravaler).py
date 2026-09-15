@@ -1,5 +1,12 @@
+
+
+
+
+
 import os             ## -------- "os" arquivo dentro do phyton para executar comandos externos do nosso arquivo
 import cadastro       ## -------- USAMOS O "IMPORT" para realmente importar coisas para dentro desse arquivo ---- ai nesse caso eu to importando o arquivo "cadastro" para dentro desse aqui, deixando os codigos mais separados e organizados!!
+import listar
+import atualizar
 
 banco_dados = []
 
@@ -9,6 +16,7 @@ def menu () :
         print ("2 - Listar Clientes")
         print ("3 - Atualizar cliente")
         print ("4 - Excluir cliente")
+        print ("5 - Sair do Sistema")
         print ("-" * 50)
 
         opcao = input ("Escolha uma opção:")
@@ -18,9 +26,11 @@ def menu () :
             print ("Cadastro")
             cadastro.cadastro_cliente (banco_dados)
         elif opcao == "2":
-            print (banco_dados)
+            print ("Listagem")
+            listar.listar_clientes (banco_dados)
         elif opcao == "3":
             print ("Atualizar")
+            atualizar.atualizar_cliente (banco_dados)
         elif opcao == "4":
             print ("Excluir")
         elif opcao == "5":
